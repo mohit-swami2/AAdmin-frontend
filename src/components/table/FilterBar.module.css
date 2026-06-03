@@ -1,0 +1,19 @@
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+}
+
+.filterBar > * {
+  min-width: 160px;
+  flex: 1;
+}
+
+.filterBar > *:last-child {
+  flex: 2;
+}

@@ -1,0 +1,114 @@
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  transition: width 0.25s ease;
+}
+
+.sidebar.collapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+.brandRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 16px 12px;
+  border-bottom: 1px solid var(--border-color);
+  min-height: 68px;
+}
+
+.brandRowCollapsed {
+  justify-content: center;
+  padding: 16px 8px;
+}
+
+.brand {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.collapseBtn {
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.collapseBtn:hover {
+  color: var(--accent-purple);
+  background: rgba(52, 152, 219, 0.12);
+}
+
+.sectionLabel {
+  margin: 20px 16px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--text-faint);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 16px 12px;
+  gap: 4px;
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 16px;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.collapsed .navLink {
+  justify-content: center;
+  padding: 11px;
+}
+
+.navLink:hover {
+  background: rgba(52, 152, 219, 0.1);
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+.active {
+  background: rgba(52, 152, 219, 0.18);
+  color: var(--accent-purple);
+  border-left: 3px solid var(--accent-purple);
+  padding-left: 13px;
+}
+
+.collapsed .active {
+  border-left: none;
+  padding-left: 11px;
+}
+
+.navIcon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
