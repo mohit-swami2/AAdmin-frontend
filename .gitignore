@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Environment (keep .env.example as a template)
+.env
+.env.*
+!.env.example
