@@ -27,7 +27,7 @@ const LoginPage = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(loginSchema),
-    defaultValues: { email: 'aadmin@mailinator.com', password: 'aadmin@12345' },
+    defaultValues: { email: '', password: '' },
   });
 
   const onSubmit = async (data) => {
@@ -63,7 +63,7 @@ const LoginPage = () => {
             <input
               id="email"
               type="email"
-              placeholder="aadmin@mailinator.com"
+              placeholder="Enter your email address"
               autoComplete="email"
               className={`${styles.fieldInput} ${errors.email ? styles.fieldInputError : ''}`}
               {...register('email')}
