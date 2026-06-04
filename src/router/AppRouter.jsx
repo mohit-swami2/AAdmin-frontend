@@ -19,6 +19,11 @@ const AuthRedirect = ({ children }) => {
   return children;
 };
 
+const NotFoundRedirect = () => {
+  const { isAuthenticated } = useAuth();
+  return <Navigate to={isAuthenticated ? ROUTES.DASHBOARD : ROUTES.LOGIN} replace />;
+};
+
 const AppRouter = () => {
   return (
     <BrowserRouter>
@@ -56,7 +61,7 @@ const AppRouter = () => {
           <Route path={ROUTES.SETTINGS} element={<GlobalSettingsPage />} />
         </Route>
 
-        <Route path="*" element={<Navigate to={ROUTES.DASHBOARD} replace />} />
+        <Route path="*" element={<NotFoundRedirect />} />
       </Routes>
     </BrowserRouter>
   );
